@@ -23,6 +23,13 @@ services:
       - POSTGRES_USER=postgres_user
       - POSTGRES_PASSWORD=postgres_password
       - POSTGRES_DB=postgres_database
+  
+  nginx:
+    build: nginx
+    ports:
+      - 80:80
+    depends_on:
+      - web
 
 volumes:
   postgres_data:
